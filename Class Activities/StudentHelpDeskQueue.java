@@ -26,7 +26,6 @@ class StudentHelpDeskQueue{
             System.out.println(student + " request is processed and removed from the queue\n");     //Confirm that the request has been handled
         }
 
-
     }
 
 }
