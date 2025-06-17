@@ -114,6 +114,11 @@ join Companies c
 	on j.CompanyID = c.CompanyID
 where j.salary between 40000 and 70000;
 
+Select j.JobTitle 'Job Title', c.CompanyName 'Company', j.JobLocation 'Job Location', j.Salary 'Salary'
+from Jobs j
+join Companies c
+	on j.CompanyID = c.CompanyID
+where j.salary >= 40000 and j.salary <= 70000;
 
 -- 7. Write an SQL query that retrieves the job application history for a specific applicant. 
 -- Allow a parameter for the ApplicantID.
@@ -190,8 +195,6 @@ where JobID not in(select distinct JobID from Applications);
 
 
 -- 13. Retrieve a list of job applicants along with the companies they have applied to and the positions they have applied for.
-
-
 
 Select a.ApplicantID 'Applicant ID', concat(a.FirstName," ",a.LastName) 'Name', c.CompanyName 'Company', j.JobTitle 'Position'
 from Applicants a
