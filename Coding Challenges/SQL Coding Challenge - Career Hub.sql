@@ -138,6 +138,7 @@ join Jobs j
 where j.salary > 0
 group by c.CompanyID;
 
+
 -- 9. Write an SQL query to identify the company that has posted the most job listings. 
 -- Display the company name along with the count of job listings they have posted. 
 -- Handle ties if multiple companies have the same maximum count.
@@ -165,6 +166,14 @@ join Jobs j
 join Companies c
 	on j.CompanyID = c.CompanyID
 where c.Location = 'CityX' and a.Experience >= 3;
+
+select a.*
+from Applicants a
+join Applications ap
+	on a.ApplicantID = ap.ApplicantID
+join Jobs j
+	on ap.JobID = j.JobID
+where j.JobLocation = 'CityX' and a.Experience >= 3;
 
 
 -- 11. Retrieve a list of distinct job titles with salaries between $60,000 and $80,000.
